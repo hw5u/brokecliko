@@ -2,7 +2,7 @@
 bkg = {}
 
 bkg.images = {
-	love.graphics.newImage("assets/girl_wings.jpg"),
+	love.graphics.newImage("assets/wallpaper.jpg"),
 	love.graphics.newImage("assets/view.png")
 }
 
