@@ -1,15 +1,16 @@
 local player = require("src/player")
-local bkg = require("src/bkg")
+local mapManager = require("src/mapManager")
 
 function love.load()
 end
 
 function love.update(dt)
 	player:update(dt)
+	mapManager:update()
 end
 
 function love.draw()
-	bkg:draw()
+	mapManager:draw()
 	player:draw()
 end
 
@@ -29,9 +30,5 @@ function love.keypressed(key)
 
 	if key == "escape" then
 		love.event.quit()
-	end
-
-	if key == "d" then
-		bkg:change()
 	end
 end
