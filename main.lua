@@ -19,10 +19,6 @@ function love.mousepressed(x, y, button)
 		print("x : " .. x .. " y: " .. y .. " click")
 	end
 
-	if button == 2 then
-		bkg:change()
-	end
-
 end
 
 function love.keypressed(key)
@@ -33,5 +29,9 @@ function love.keypressed(key)
 
 	if key == "escape" then
 		love.event.quit()
+	end
+
+	if key == "d" then
+		bkg:change()
 	end
 end
