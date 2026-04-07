@@ -33,6 +33,7 @@ function player:update(dt)
 		self.timer = self.timer - 1
 	end
 
+
 end
 
 function player:rebirth()

@@ -1,5 +1,6 @@
 local player = require("src/player")
 local mapManager = require("src/mapManager")
+local shop = require("src/shop")
 
 function love.load()
 end
@@ -12,6 +13,7 @@ end
 function love.draw()
 	mapManager:draw()
 	player:draw()
+	shop:draw()
 end
 
 function love.mousepressed(x, y, button)
@@ -30,5 +32,9 @@ function love.keypressed(key)
 
 	if key == "escape" then
 		love.event.quit()
+	end
+
+	if key == "s" then
+		shop:act()
 	end
 end
