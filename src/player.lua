@@ -53,7 +53,7 @@ function player:draw()
 	love.graphics.print("CPS : " .. self.cps, 1, 1000)
 
 	if self.points >= self.rebirth_need then
-		love.graphics.print("You can Rebirth!", 1, 500)
+		love.graphics.print(" ! YOU CAN REBIRTH !", 500, 500)
 	end
 end
 
