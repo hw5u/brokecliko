@@ -1,8 +1,6 @@
 # Broke Cliko II
 
 Broke Cliko II is the sequel to the original Broke Cliko, that I made in late 2025.
-If you want to try the first game, you can play it here: [Broke Cliko](https://jeekwol.itch.io/broke-cliko)
-*(Warning: it may contain some disrespectful or vulgar content.)*
 
 As the name suggests, Broke Cliko is a clicker game where you start broke (like broke boi boi) and buy upgrades to become richer in the long term.
 
