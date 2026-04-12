@@ -1,6 +1,7 @@
 local player = require("src/player")
 local mapManager = require("src/mapManager")
 local shop = require("src/shop")
+local reputation = require("src/reputation")
 
 function love.load()
 end
@@ -8,17 +9,20 @@ end
 function love.update(dt)
 	player:update(dt)
 	mapManager:update()
+	reputation:update()
 end
 
 function love.draw()
 	mapManager:draw()
 	player:draw()
 	shop:draw()
+	reputation:draw()
 end
 
 function love.mousepressed(x, y, button)
 	if button == 1 then
 		player:click()
+		reputation:click()
 		print("x : " .. x .. " y: " .. y .. " click")
 	end
 
