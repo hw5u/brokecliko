@@ -21,7 +21,7 @@ end
 
 function reputation:draw()
 	love.graphics.setFont(aller_font_small)
-	love.graphics.print(reputation.current .. " / " .. reputation.max, 400, 400)
+	love.graphics.print(reputation.current .. " / " .. reputation.max, 5, 400)
 end
 
 

@@ -41,6 +41,10 @@ function love.keypressed(key)
 	if key == "s" then
 		shop:act()
 	end
+
+	if key == "space" then
+		player:click()
+	end
 	
 	if shop.active then
 		shop:buy(key)

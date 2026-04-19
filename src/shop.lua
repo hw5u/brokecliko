@@ -28,14 +28,16 @@ function shop:draw()
 	if self.active then
 		local y = 400
 		for i, item in ipairs(items) do
+
 			love.graphics.setFont(aller_title)
-			love.graphics.print(item.name, 60 , y)
-			y = y + 54
+			love.graphics.print(item.name, 340, y)
+			
+			y  = y + 54
+
 			love.graphics.setFont(aller)
-			love.graphics.print(item.price, 60, y)
-			y = y + 30
-			love.graphics.print(item.give, 60, y)
-			y = y + 60
+			love.graphics.print(item.price .. item.give, 340, y)
+
+			y = y + 58
 		end
 	end
 end
