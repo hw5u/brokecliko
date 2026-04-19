@@ -26,9 +26,9 @@ function mapManager:update()
 				self.current = i
 				self.background = love.graphics.newImage(maps[mapManager.current].background)
 
-				--self.music:stop()
+				self.music:stop()
 				self.music = love.audio.newSource(maps[mapManager.current].music, "stream")
-				--self.music:play()
+				self.music:play()
 			end
 			break
 		end
