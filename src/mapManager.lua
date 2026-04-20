@@ -7,6 +7,7 @@ local maps = require("src/maps")
 local player = require("src/player")
 local shop = require("src/shop")
 
+mapManager.shop_background = love.graphics.newImage("assets/images/shop.jpg")
 mapManager.background = love.graphics.newImage(maps[mapManager.current].background)
 mapManager.music = love.audio.newSource(maps[mapManager.current].music, "stream")
 -- mapManager.music:play()
@@ -37,7 +38,7 @@ end
 
 function mapManager:draw()
 	if shop.active then
-		love.graphics.draw(love.graphics.newImage("assets/images/shop.jpg"),0 ,0)
+		love.graphics.draw(self.shop_background,0 ,0)
 	else
 		love.graphics.draw(self.background, 0, 0)
 	end

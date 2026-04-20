@@ -16,7 +16,7 @@ player.timer = 0
 aller_font = love.graphics.newFont("assets/Aller/Aller_Bd.ttf", 350)
 aller_font_small = love.graphics.newFont("assets/Aller/Aller_Bd.ttf", 50)
 
-function player:click()
+function player:click() -- player clicks or press spoace
 	self.points = self.points + (self.power * self.multiplier)
 	self.clicks = self.clicks + 1 -- timer
 end
@@ -32,8 +32,6 @@ function player:update(dt)
 		self.clicks = 0
 		self.timer = self.timer - 1
 	end
-
-
 end
 
 function player:rebirth()
@@ -51,6 +49,7 @@ function player:draw()
 	love.graphics.print(self.points, 1, 1) -- prints points on screen (holy obvious)
 	love.graphics.setFont(aller_font_small)
 	love.graphics.print("CPS : " .. self.cps, 1, 1000)
+	love.graphics.print(player.power * 10, 1, 800 )
 
 	if self.points >= self.rebirth_need then
 		love.graphics.print(" ! YOU CAN REBIRTH !", 500, 500)

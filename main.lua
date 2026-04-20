@@ -42,6 +42,10 @@ function love.keypressed(key)
 		shop:act()
 	end
 
+	if key == "z" then
+		reputation.give()
+	end
+
 	if key == "space" then
 		player:click()
 	end

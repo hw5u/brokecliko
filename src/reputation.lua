@@ -9,7 +9,17 @@ aller_font_small = love.graphics.newFont("assets/Aller/Aller_Bd.ttf", 50)
 
 -- every time the player clicks the reputation bar goes down
 function reputation:click()
-	reputation.current = reputation.current - 1
+	self.current = self.current - 1
+end
+
+function reputation:give()
+	local amount = player.points / 10
+	local need = player.power * 10
+
+	if player.points >= need then
+		reputation.current = reputation.max
+		player.points = player.points - amount
+	end
 end
 
 function reputation:update()
