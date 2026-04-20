@@ -1,7 +1,7 @@
 player = {}
 
 player.points = 0
-player.power = 1
+player.power = 1.34444
 player.rebirths = 0
 player.rebirth_need = 10
 player.multiplier = 1
@@ -12,6 +12,8 @@ player.can_rebirth = false
 player.clicks = 0
 player.cps = 0
 player.timer = 0
+
+local utils = require("src/utils")
 
 aller_font = love.graphics.newFont("assets/Aller/Aller_Bd.ttf", 350)
 aller_font_small = love.graphics.newFont("assets/Aller/Aller_Bd.ttf", 50)
@@ -46,10 +48,10 @@ end
 
 function player:draw()
 	love.graphics.setFont(aller_font)
-	love.graphics.print(self.points, 1, 1) -- prints points on screen (holy obvious)
+	love.graphics.print(utils:abbreviateNumber(self.points), 1, 1) -- prints points on screen (holy obvious)
 	love.graphics.setFont(aller_font_small)
 	love.graphics.print("CPS : " .. self.cps, 1, 1000)
-	love.graphics.print(player.power * 10, 1, 800 )
+	love.graphics.print(utils:abbreviateNumber(player.power * 10) .. " to give", 1, 800 )
 
 	if self.points >= self.rebirth_need then
 		love.graphics.print(" ! YOU CAN REBIRTH !", 500, 500)
