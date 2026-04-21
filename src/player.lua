@@ -1,7 +1,7 @@
 player = {}
 
 player.points = 0
-player.power = 1.34444
+player.power = 1
 player.rebirths = 0
 player.rebirth_need = 10
 player.multiplier = 1

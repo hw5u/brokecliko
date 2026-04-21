@@ -2,6 +2,7 @@ local player = require("src/player")
 local mapManager = require("src/mapManager")
 local shop = require("src/shop")
 local reputation = require("src/reputation")
+local menu = require("src/menu")
 
 function love.load()
 end
@@ -10,13 +11,22 @@ function love.update(dt)
 	player:update(dt)
 	mapManager:update()
 	reputation:update()
+
+	--key combination
+	if love.keyboard.isDown("lctrl") and love.keyboard.isDown("m") then
+		menu.active = true
+	end
 end
 
 function love.draw()
-	mapManager:draw()
-	player:draw()
-	shop:draw()
-	reputation:draw()
+	if menu.active then
+		menu:draw()
+	else
+		mapManager:draw()
+		player:draw()
+		shop:draw()
+		reputation:draw()
+	end
 end
 
 function love.mousepressed(x, y, button)
@@ -29,6 +39,12 @@ function love.mousepressed(x, y, button)
 end
 
 function love.keypressed(key)
+
+	if menu.active then
+		menu.keypressed(key)
+		return
+	end
+
 	if key == "r" and player.can_rebirth then
 		player:rebirth()
 		print("rebirth!")
@@ -47,7 +63,9 @@ function love.keypressed(key)
 	end
 
 	if key == "space" then
+		reputation:click()
 		player:click()
+		print("space click")
 	end
 	
 	if shop.active then
