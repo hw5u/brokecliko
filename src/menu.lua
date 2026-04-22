@@ -6,16 +6,19 @@ menu.options = {"play", "quit"}
 menu.selected = 1
 
 allerf = love.graphics.newFont("assets/Aller/Aller_Bd.ttf", 30)
+gta_sounds = love.audio.newSource("assets/sounds/gta-menu.mp3", "static")
 
 function menu.keypressed(key)
-    if key == "up" then
+    if key == "up" or key =="k" then
+	gta_sounds:play()
         menu.selected = menu.selected - 1
         if menu.selected < 1 then
             menu.selected = #menu.options
         end
     end
 
-    if key == "down" then
+    if key == "down" or key =="j" then
+	gta_sounds:play()
         menu.selected = menu.selected + 1
         if menu.selected > #menu.options then
             menu.selected = 1
