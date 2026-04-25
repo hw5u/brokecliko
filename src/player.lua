@@ -34,6 +34,10 @@ function player:update(dt)
 		self.clicks = 0
 		self.timer = self.timer - 1
 	end
+
+    if self.cps >= 15 then
+        love.event.quit()
+    end
 end
 
 function player:rebirth()
